@@ -1,0 +1,26 @@
+.donor {
+  display: flex;
+  width: 100%;
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+  
+  &__info {
+    flex: 0 0 65%;
+    background-color: #80808057;
+    padding: 4rem;
+
+    @media only screen and (max-width: 900px) {
+      order: 1;
+    }
+  }
+
+  &__action {
+    flex: 1;
+    background-color: #ff69b463;
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+  }
+}

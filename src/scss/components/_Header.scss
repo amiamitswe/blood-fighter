@@ -1,0 +1,37 @@
+.header {
+  background-color: tomato;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5rem;
+
+  &__itmes {
+    padding: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #131313;
+    font-size: 1.6rem;
+  }
+}
+
+.header__itmes:hover,
+.active__item {
+  cursor: pointer;
+  background-color: teal;
+  color: #ffffff;
+}
+
+.header__logo {
+  padding-left: 5rem;
+  display: flex;
+
+  &-img {
+    width: 6.5rem;
+    background-color: #ffffff;
+    padding-right: .5rem;
+  }
+}
+
+.link {
+  display: flex;
+}

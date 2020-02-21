@@ -1,0 +1,49 @@
+.home {
+  display: flex;
+  width: 100%;
+  padding: 1rem 0 0;
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+  }
+}
+
+.donor__list {
+  background-color: rgba(0, 128, 0, 0.123);
+  flex: 0 0 70%;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+
+.donor__filter {
+  flex: 1;
+  font-size: 1.6rem;
+  background-color: #ff000029;
+  padding: 3rem 0;
+  border-radius: 5px;
+}
+
+.select__input {
+  max-width: 30rem;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  outline: none;
+
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+}
+
+.select__input__control {
+  border-color: transparent !important;
+  height: 50px;
+
+  &:focus {
+    outline: none;
+    border: none !important;
+  }
+}

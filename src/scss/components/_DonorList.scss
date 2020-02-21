@@ -1,0 +1,58 @@
+.donor__list {
+  overflow-x:auto;
+
+  @media only screen and (max-width: 900px) {
+    order: 1;
+  }
+}
+
+.donor__list-item {
+  border: 1px solid gray;
+}
+
+.donor__list-item:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
+.donor__image {
+  height: 4rem;
+}
+
+.donor__profile {
+  border: none;
+  font-size: 1.6rem;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: currentColor;
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 1px solid gray;
+    color: red;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  padding: 4px 8px 0px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
