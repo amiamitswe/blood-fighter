@@ -5,6 +5,7 @@
 
   @media only screen and (max-width: 900px) {
     flex-direction: column;
+    padding: 1.5rem;
   }
 }
 
@@ -15,6 +16,11 @@
   margin-right: 1rem;
   padding: 1rem 2rem;
   border-radius: 5px;
+
+  @media only screen and (max-width: 900px) {
+    margin-right: 0;
+    padding: 2rem;
+  }
 }
 
 .donor__filter {
@@ -23,6 +29,10 @@
   background-color: #ff000029;
   padding: 3rem 0;
   border-radius: 5px;
+
+  @media only screen and (max-width: 900px) {
+    margin-bottom: 1rem;
+  }
 }
 
 .select__input {
