@@ -11,7 +11,7 @@
 }
 
 .donor__list-item:not(:last-child) {
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .donor__image {
@@ -38,20 +38,71 @@
   }
 }
 
+
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-td, th {
-  text-align: left;
-  padding: 8px;
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
 }
 
-td {
-  padding: 4px 8px 0px;
+table tr {
+  padding: .35em;
 }
 
-tr:nth-child(even) {
+table tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+
+table td {
+  padding: 4px 8px 0;
+  text-align: left;
+}
+
+table th {
+  padding: 8px;
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    text-align: right;
+  }
+  
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
 }

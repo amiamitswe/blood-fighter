@@ -99,14 +99,14 @@ class Home extends Component {
           <table>
             <thead>
               <tr>
-                <th>NO</th>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Blood +/-</th>
-                <th>Last Donate</th>
-                <th>Is capable</th>
-                <th>Profile</th>
+                <th scope="col">NO</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Blood +/-</th>
+                <th scope="col">Last Donate</th>
+                <th scope="col">Is capable</th>
+                <th scope="col">Profile</th>
               </tr>
             </thead>
 
