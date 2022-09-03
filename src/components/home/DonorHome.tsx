@@ -6,21 +6,21 @@ import Select from "react-select";
 const donar = [
   {
     id: 1,
-    img: "Img",
+    image: "https://avatars0.githubusercontent.com/u/30245543?s=400&v=4",
     name: "Amit Samadder",
     age: "24",
-    bloodGroup: "O+",
-    lastDate: "10/10/2019",
-    canDonate: "yes",
+    blood: "O+",
+    lastDonation: "2022-05-03T10:45:39.470Z",
+    isEligible: false,
   },
   {
     id: 2,
-    img: "Img",
+    image: "https://avatars0.githubusercontent.com/u/30245543?s=400&v=4",
     name: "Amit Samadder (Abir)",
     age: "23",
-    bloodGroup: "O+",
-    lastDate: "25/12/2019",
-    canDonate: "No",
+    blood: "O+",
+    lastDonation: "2022-05-03T10:45:39.470Z",
+    isEligible: true,
   },
 ];
 
@@ -46,7 +46,7 @@ const locations = [
   { value: "Sylhet", label: "Sylhet" },
 ];
 
-const DonarHome = () => {
+const DonarHome = (props: any) => {
   return (
     <div className="home">
       <div className="donor__list">
@@ -65,18 +65,21 @@ const DonarHome = () => {
           </thead>
 
           <tbody>
-            {donar.map((a) => (
-              <SignalDonor
-                key={a.id}
-                id={a.id}
-                name={a.name}
-                age={a.age}
-                bGroup={a.bloodGroup}
-                lastDonateDate={a.lastDate}
-                isCapableToDonate={a.canDonate}
-                donorID={a.id}
-              />
-            ))}
+            {(props?.data?.donares || donar)?.map(
+              (donar: any, index: number) => (
+                <SignalDonor
+                  key={donar._id + index.toString()}
+                  id={index + 1}
+                  image={donar.image}
+                  name={donar.name}
+                  age={donar.age}
+                  bGroup={donar.blood}
+                  lastDonateDate={donar.lastDonation}
+                  isCapableToDonate={donar.isEligible}
+                  donorID={donar._id}
+                />
+              )
+            )}
           </tbody>
         </table>
       </div>
