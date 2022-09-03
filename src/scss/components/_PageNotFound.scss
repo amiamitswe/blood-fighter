@@ -8,9 +8,17 @@
   }
 
   .header__itmes {
-    border-bottom: 1px solid gray;
-    font-size: 2rem;
+    padding: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #131313;
+    font-size: 1.6rem;
   }
+
+  // .header__items {
+  //   border-bottom: 1px solid gray;
+  //   font-size: 2rem;
+  // }
 
   &__img {
     width: 30%;

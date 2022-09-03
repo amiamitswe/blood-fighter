@@ -12,7 +12,7 @@
     height: 8rem;
   }
 
-  &__itmes {
+  &__items {
     padding: 1rem;
     text-decoration: none;
     text-transform: uppercase;
@@ -25,7 +25,7 @@
   }
 }
 
-.header__itmes:hover,
+.header__items:hover,
 .active__item {
   cursor: pointer;
   background-color: teal;
@@ -38,7 +38,7 @@
   &-img {
     width: 6.5rem;
     background-color: #ffffff;
-    padding-right: .5rem;
+    padding-right: 0.5rem;
 
     @media only screen and (max-width: 900px) {
       width: 9.5rem;

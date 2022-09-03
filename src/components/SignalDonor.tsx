@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SingalDonor = props => {
+const SignalDonor = (props: any) => {
   return (
     <tr className="donor__list-item">
       <td data-label="NO">{props.id}</td>
@@ -16,7 +16,7 @@ const SingalDonor = props => {
       <td data-label="Age">{props.age}</td>
       <td data-label="Blood +/-">{props.bGroup}</td>
       <td data-label="Last Donate">{props.lastDonateDate}</td>
-      <td data-label="Is capable">{props.isCapableToDonote}</td>
+      <td data-label="Is capable">{props.isCapableToDonate}</td>
       <td data-label="Profile">
         <Link to="/Donor?id=id" className="donor__profile">
           Profile
@@ -26,4 +26,4 @@ const SingalDonor = props => {
   );
 };
 
-export default SingalDonor;
+export default SignalDonor;

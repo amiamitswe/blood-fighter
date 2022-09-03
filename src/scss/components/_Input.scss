@@ -1,4 +1,4 @@
-.input-fild {
+.input-field {
   max-width: 30rem;
   width: 100%;
   margin: 0 auto;
@@ -14,7 +14,7 @@
   background-color: #ffffff;
   width: 100%;
   border-radius: 3px;
-  box-shadow: 0 5px 1rem rgba(0,0,0,0.2);
+  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
 }
 
@@ -33,10 +33,15 @@
   visibility: hidden;
 }
 
-.input[type = submit] {
+.input[type="submit"] {
   width: 70%;
-  background-image: linear-gradient(to right bottom, #008000bb, #fff, #0080009a );
-  box-shadow: 0 5px 1.5rem rgba(0,0,0,0.5);
+  background-image: linear-gradient(
+    to right bottom,
+    #008000bb,
+    #fff,
+    #0080009a
+  );
+  box-shadow: 0 5px 1.5rem rgba(0, 0, 0, 0.5);
   transition: all 0.2s;
   border-bottom: none;
   color: #131313;
@@ -44,11 +49,11 @@
   text-transform: uppercase;
 }
 
-.input[type = submit]:hover {
+.input[type="submit"]:hover {
   cursor: pointer;
 }
 
-.input[type = submit]:active {
+.input[type="submit"]:active {
   box-shadow: none;
 }
 

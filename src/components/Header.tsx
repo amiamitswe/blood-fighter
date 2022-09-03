@@ -1,10 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Header = props => {
+const Header = (props: any) => {
+  const navLinkClassName: any = ({ isActive }: { isActive: boolean }) =>
+    ["header__items", isActive ? "active__item" : null]
+      .filter(Boolean)
+      .join(" ");
+
   return (
     <div className="header" onClick={props.login}>
-      <NavLink className="header__logo" to="/" exact={true}>
+      <NavLink className="header__logo" to="/">
         <img
           className="header__logo-img"
           src="https://www.pinclipart.com/picdir/big/104-1048833_blood-donor-logo-png-clipart.png"
@@ -13,35 +18,18 @@ const Header = props => {
       </NavLink>
 
       <div className="link">
-        <NavLink
-          to="/"
-          className="header__itmes"
-          activeClassName="active__item"
-          exact
-        >
+        <NavLink to="/" className={navLinkClassName}>
           Home
         </NavLink>
-        <NavLink
-          to="/About"
-          className="header__itmes"
-          activeClassName="active__item"
-        >
+        <NavLink to="/About" className={navLinkClassName}>
           About
         </NavLink>
         {props.isLogin ? (
-          <NavLink
-            to="/Login"
-            className="header__itmes"
-            activeClassName="active__item"
-          >
+          <NavLink to="/Login" className={navLinkClassName}>
             Login Out
           </NavLink>
         ) : (
-          <NavLink
-            to="/Login"
-            className="header__itmes"
-            activeClassName="active__item"
-          >
+          <NavLink to="/Login" className={navLinkClassName}>
             Login
           </NavLink>
         )}
