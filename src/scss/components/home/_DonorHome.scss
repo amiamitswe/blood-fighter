@@ -10,28 +10,32 @@
 }
 
 .donor__list {
+  overflow-x: auto;
   background-color: rgba(0, 128, 0, 0.123);
-  flex: 0 0 70%;
+  width: 70%;
   font-size: 1.6rem;
   margin-right: 1rem;
   padding: 1rem 2rem;
   border-radius: 5px;
 
   @media only screen and (max-width: 900px) {
+    order: 1;
     margin-right: 0;
     padding: 2rem;
+    width: 100%;
   }
 }
 
 .donor__filter {
-  flex: 1;
+  width: 30%;
   font-size: 1.6rem;
   background-color: #ff000029;
-  padding: 3rem 0;
+  padding: 3rem;
   border-radius: 5px;
 
   @media only screen and (max-width: 900px) {
     margin-bottom: 1rem;
+    width: 100%;
   }
 }
 

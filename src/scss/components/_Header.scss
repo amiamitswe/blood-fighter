@@ -21,6 +21,8 @@
 
     @media only screen and (max-width: 900px) {
       padding: 1.5rem;
+      display: flex;
+      align-items: center;
     }
   }
 }
@@ -48,4 +50,5 @@
 
 .link {
   display: flex;
+  align-items: center;
 }

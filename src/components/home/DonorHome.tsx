@@ -1,6 +1,6 @@
 import React from "react";
-import SignalDonor from "../../components/SignalDonor";
-import Input from "../../components/Input";
+import SignalDonor from "../SignalDonor";
+import Input from "../Input";
 import Select from "react-select";
 
 const donar = [
@@ -46,7 +46,7 @@ const locations = [
   { value: "Sylhet", label: "Sylhet" },
 ];
 
-const Home = () => {
+const DonarHome = () => {
   return (
     <div className="home">
       <div className="donor__list">
@@ -106,4 +106,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default DonarHome;

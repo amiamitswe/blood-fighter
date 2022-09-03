@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import errorImg from "../assets/icon-image/error-img.png";
+// https://www.freeiconspng.com/uploads/error-icon-15.png
 
 const PageNotFound = () => {
   return (
@@ -9,11 +11,7 @@ const PageNotFound = () => {
         Home
       </Link>
 
-      <img
-        className="PageNotFound__img"
-        src="https://www.freeiconspng.com/uploads/error-icon-15.png"
-        alt="error"
-      />
+      <img className="PageNotFound__img" src={errorImg} alt="error" />
     </div>
   );
 };

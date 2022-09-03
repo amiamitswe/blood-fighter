@@ -1,6 +1,6 @@
 import React from "react";
 
-const Donor = () => {
+const DonorDetails = () => {
   return (
     <div className="donor">
       <div className="donor__info">
@@ -19,4 +19,4 @@ const Donor = () => {
   );
 };
 
-export default Donor;
+export default DonorDetails;

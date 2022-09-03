@@ -1,15 +1,12 @@
-// container css
-@import './container/App';
-
-@import './container/donor/Login';
-@import './container/home/DonorHome';
-@import './container/donor/donor';
-
-
-
+@import "./_index";
+@import "./_App";
 
 // component css
-@import './components/Header';
-@import './components/DonorList';
-@import './components/Input';
-@import './components/PageNotFound';
+
+@import "./components/donor/Login";
+@import "./components/home/DonorHome";
+@import "./components/donor/donor";
+@import "./components/Header";
+@import "./components/DonorList";
+@import "./components/Input";
+@import "./components/PageNotFound";
