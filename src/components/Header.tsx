@@ -27,7 +27,7 @@ const Header = (props: any) => {
           </NavLink>
           {props.isLogin ? (
             <NavLink to="/Login" className={navLinkClassName}>
-              Login Out
+              Log Out
             </NavLink>
           ) : (
             <NavLink to="/Login" className={navLinkClassName}>

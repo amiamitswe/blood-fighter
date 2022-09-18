@@ -10,7 +10,10 @@ const DonarPage = () => {
         type: "cors",
       };
 
-      const response = await fetch("http://localhost:3300/donar/", setting);
+      const response = await fetch(
+        process.env.REACT_APP_API_URL + "/donar/",
+        setting
+      );
       const data = await response.json();
       setAllDonar(data);
     } catch (error) {
