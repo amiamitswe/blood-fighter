@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import "react-toastify/dist/ReactToastify.css";
 import "./scss/Style.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { ToastContainer } from "react-toastify";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -10,6 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <App />
+    <ToastContainer />
   </React.StrictMode>
 );
 
