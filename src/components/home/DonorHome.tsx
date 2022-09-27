@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SignalDonor from "../SignalDonor";
 import Input from "../Input";
 import Select from "react-select";
@@ -46,7 +46,7 @@ const locations = [
   { value: "Sylhet", label: "Sylhet" },
 ];
 
-const DonarHome = (props: any) => {
+const DonarHome = (props: any, setSearchName: any) => {
   return (
     <div className="home">
       <div className="donor__list">
@@ -85,7 +85,7 @@ const DonarHome = (props: any) => {
       </div>
 
       <div className="donor__filter">
-        <Input type="number" place="Mobile No" />
+        <Input type="text" place="Mobile No" onChange={setSearchName} />
 
         <Select
           classNamePrefix="select__input"

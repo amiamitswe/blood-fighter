@@ -1,13 +1,8 @@
 import React from "react";
-import PrivetRouter from "../assets/router/PrivetRouter";
 import DonorDetails from "../components/donor/DonorDetails";
 
 const DonarDetailPage = () => {
-  return (
-    <PrivetRouter>
-      <DonorDetails />
-    </PrivetRouter>
-  );
+  return <DonorDetails />;
 };
 
 export default DonarDetailPage;

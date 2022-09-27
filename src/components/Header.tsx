@@ -1,11 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const Header = (props: any) => {
   const navLinkClassName: any = ({ isActive }: { isActive: boolean }) =>
     ["header__items", isActive ? "active__item" : null]
       .filter(Boolean)
       .join(" ");
+
+  const isAuth = useAuth();
 
   return (
     <div className="header" onClick={props.login}>
@@ -19,16 +22,18 @@ const Header = (props: any) => {
         </NavLink>
 
         <div className="link">
-          <NavLink to="/" className={navLinkClassName}>
-            Home
-          </NavLink>
-          <NavLink to="/About" className={navLinkClassName}>
-            About
-          </NavLink>
-          {props.isLogin ? (
-            <NavLink to="/Login" className={navLinkClassName}>
-              Log Out
-            </NavLink>
+          {isAuth ? (
+            <>
+              <NavLink to="/" className={navLinkClassName}>
+                Home
+              </NavLink>
+              <NavLink to="/About" className={navLinkClassName}>
+                About
+              </NavLink>
+              <NavLink to="/logout" className={navLinkClassName}>
+                Log Out
+              </NavLink>
+            </>
           ) : (
             <NavLink to="/Login" className={navLinkClassName}>
               Login

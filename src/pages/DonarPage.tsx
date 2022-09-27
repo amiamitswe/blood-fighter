@@ -3,7 +3,9 @@ import DonarHome from "../components/home/DonorHome";
 
 const DonarPage = () => {
   const [allDonar, setAllDonar] = useState();
-  const fetchAllDonars = useCallback(async () => {
+  const [searchName, setSearchName] = useState<string>("");
+
+  const fetchAllDonars = useCallback(async (name: string) => {
     try {
       const setting = {
         method: "GET",
@@ -11,7 +13,7 @@ const DonarPage = () => {
       };
 
       const response = await fetch(
-        process.env.REACT_APP_API_URL + "/donar/",
+        process.env.REACT_APP_API_URL + "/donar?name=" + name,
         setting
       );
       const data = await response.json();
@@ -22,12 +24,14 @@ const DonarPage = () => {
   }, []);
 
   useEffect(() => {
-    if (!allDonar) {
-      fetchAllDonars();
-    }
-  }, [allDonar, fetchAllDonars]);
+    // console.log(searchName);
 
-  return <DonarHome data={allDonar || []} />;
+    if (!allDonar) {
+      fetchAllDonars(searchName as string);
+    }
+  }, [allDonar, fetchAllDonars, searchName]);
+
+  return <DonarHome data={allDonar || []} setSearchName={setSearchName} />;
 };
 
 export default DonarPage;

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
 import { dateConvertor } from "../../utils/helper";
 
 const DonorDetails = () => {
@@ -7,6 +8,7 @@ const DonorDetails = () => {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const donarId = searchParams.get("id");
+  const isAuth = useAuth();
 
   const [donar, setDonar] = useState<any>();
 
@@ -15,10 +17,14 @@ const DonorDetails = () => {
       const setting = {
         method: "GET",
         type: "cors",
+
+        headers: {
+          Authorization: `Bearar ${isAuth}`,
+        },
       };
 
       const response = await fetch(
-        `http://localhost:3300/donar/about/${donarId}`,
+        `${process.env.REACT_APP_API_URL}/donar/about/${donarId}`,
         setting
       );
       const data = await response.json();
@@ -26,7 +32,7 @@ const DonorDetails = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [donarId]);
+  }, [donarId, isAuth]);
 
   useEffect(() => {
     fetchDonarDetails();

@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import Input from "../Input";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Login = (props: any) => {
   const [username, setUsername] = useState<string>();
   const [password, setPassword] = useState<string>();
+
+  const navigate = useNavigate();
 
   const loginHandler = async (e: any) => {
     e.preventDefault();
@@ -13,16 +16,11 @@ const Login = (props: any) => {
       method: "POST",
       type: "cors",
       headers: {
-        // "Content-Type": "text/plain;charset=UTF-8",
         "Content-Type": "application/json",
-        // Accept: "application/json",
-        // "Content-Type": "application/x-www-form-urlencoded",
       },
       body: JSON.stringify({ username, password }),
     };
     try {
-      // console.log(setting);
-
       const response = await fetch(
         (process.env.REACT_APP_API_URL + "/user/login") as string,
         setting
@@ -30,6 +28,8 @@ const Login = (props: any) => {
       const data = await response.json();
       if (data?.statusCode === 200) {
         toast.success(data.message);
+        localStorage.setItem("x-access-token", data.token);
+        navigate("/");
       } else {
         toast.error(data.error);
       }
@@ -37,8 +37,6 @@ const Login = (props: any) => {
       console.log(error);
     }
   };
-
-  const notify = () => toast("Wow so easy!");
 
   return (
     <div className="login-from">
@@ -65,13 +63,11 @@ const Login = (props: any) => {
         <Input type="submit" setValue="Login" />
       </form>
 
-      <button onClick={notify}>Notify!</button>
-
       <div className="login__help">
         <Link className="login__help-content" to="/ForgotPassword">
           Forgot Password
         </Link>
-        <Link className="login__help-content" to="/NewDonor">
+        <Link className="login__help-content" to="/SignUp">
           Register
         </Link>
       </div>
